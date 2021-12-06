@@ -2,7 +2,7 @@ import 'package:weather_bloc_app_v2/helpers/network.dart';
 import 'package:weather_bloc_app_v2/models/weather_model.dart';
 
 class WeatherRepository {
-  Future<WeatherModel> getWeatherByCity(
+  Future<Weather> getWeatherByCity(
       {required String city, required String temperatureUnit}) async {
     NetworkHelper networkHelper = NetworkHelper();
     var weatherData = await networkHelper.getData(
@@ -10,7 +10,7 @@ class WeatherRepository {
     return weatherData;
   }
 
-  Future<WeatherModel?> getWeatherByLocation(
+  Future<Weather?> getWeatherByLocation(
       {required double latitude,
       required double longitude,
       required String temperatureUnit}) async {

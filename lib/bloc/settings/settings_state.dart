@@ -1,30 +1,10 @@
 part of 'settings_bloc.dart';
 
-// enum TemperatureUnits {
-//   imperial,
-//   //Fahrenheit
-//   metric
-//   //Celsius
-// }
+class SettingsState extends Equatable {
+  final TemperatureUnits temperatureUnits;
 
-class SettingsState {
-  final String temperatureUnit;
+  SettingsState({this.temperatureUnits = TemperatureUnits.Celsius});
 
-  // final TemperatureUnits temperatureUnits;
-  //
-  // SettingsState({required this.temperatureUnits});
-  //
-  // @override
-  // List<Object?> get props => [temperatureUnits];
-  SettingsState({
-    this.temperatureUnit = 'metric',
-  });
-
-  SettingsState copyWith({
-    String? temperatureUnit,
-  }) {
-    return SettingsState(
-      temperatureUnit: temperatureUnit ?? this.temperatureUnit,
-    );
-  }
+  @override
+  List<Object?> get props => [temperatureUnits];
 }

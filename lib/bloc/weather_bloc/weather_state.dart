@@ -1,21 +1,31 @@
 part of 'weather_bloc.dart';
 
-abstract class WeatherState {}
+enum WeatherStatus { initial, loading, success, failure }
 
-class WeatherEmpty extends WeatherState {}
+class WeatherState extends Equatable {
+  final WeatherStatus weatherStatus;
+  final Weather weather;
 
-class WeatherIsSubmitting extends WeatherState {}
+  WeatherState({
+    this.weatherStatus = WeatherStatus.initial,
+    Weather? weather,
+  }) : weather = weather ?? Weather.empty;
 
-class WeatherIsLoading extends WeatherState {}
+  WeatherState copyWith({
+    WeatherStatus? weatherStatus,
+    Weather? weather,
+  }) {
+    return WeatherState(
+      weatherStatus: weatherStatus ?? this.weatherStatus,
+      weather: weather ?? this.weather,
+    );
+  }
 
-class WeatherLoaded extends WeatherState {
-  final WeatherModel weather;
+  bool get isInitial => weatherStatus == WeatherStatus.initial;
+  bool get isLoading => weatherStatus == WeatherStatus.loading;
+  bool get isSuccess => weatherStatus == WeatherStatus.success;
+  bool get isFailure => weatherStatus == WeatherStatus.failure;
 
-  WeatherLoaded({required this.weather});
-}
-
-class WeatherError extends WeatherState {
-  final Exception exception;
-
-  WeatherError(this.exception);
+  @override
+  List<Object?> get props => [weatherStatus, weather];
 }

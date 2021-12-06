@@ -13,6 +13,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   flare_flutter: ^3.0.2
   geolocator: ^7.7.1
+  http:
+  flutter_bloc: ^7.2.0
+  equatable: ^2.0.3
+
+
 
 dev_dependencies:
   flutter_test:

@@ -7,9 +7,9 @@ abstract class SettingsEvent extends Equatable {
 }
 
 class TemperatureUnitsChanged extends SettingsEvent {
-  final String temperatureUnit;
+  final Object? temperatureUnit;
 
   TemperatureUnitsChanged({required this.temperatureUnit});
   @override
-  List<Object> get props => [temperatureUnit];
+  List<Object> get props => [temperatureUnit!];
 }
