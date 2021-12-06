@@ -5,4 +5,4 @@ A minimalist flutter weather app using 'flutter_bloc' library to state managemen
 
 
 ❮img src="![weather_bloc_app_v2_1](https://user-images.githubusercontent.com/86973277/144877169-33c95082-d280-4748-b5ad-81b5d960ff63.gif)
-" width="100" ❯
+"width="100" ❯
