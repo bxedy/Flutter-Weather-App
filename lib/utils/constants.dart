@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 final kTextFormFieldDecoration = InputDecoration(
+  hintText: 'Example: Chicago',
+  hintStyle: TextStyle(color: Colors.blueGrey.withOpacity(1), fontSize: 15),
   enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(30.0),
       borderSide: BorderSide(color: Colors.white)),
