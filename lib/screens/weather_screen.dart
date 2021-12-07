@@ -23,6 +23,8 @@ class WeatherScreen extends StatelessWidget {
         },
         builder: (context, state) {
           return RefreshIndicator(
+            displacement: 0,
+            color: Colors.blueGrey.shade900,
             onRefresh: () async {
               context.read<WeatherBloc>().add(RefreshWeather());
             },

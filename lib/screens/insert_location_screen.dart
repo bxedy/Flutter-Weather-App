@@ -50,7 +50,8 @@ class _InsertLocationScreenState extends State<InsertLocationScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 _cityField(),
-                Column(
+                Stack(
+                  alignment: Alignment.bottomCenter,
                   children: [
                     _flareWidget(),
                     _insertYourLocationText(context),
@@ -75,6 +76,7 @@ class _InsertLocationScreenState extends State<InsertLocationScreen> {
           alignment: Alignment.centerRight,
           children: [
             TextFormField(
+              style: TextStyle(color: Colors.white, fontSize: 15),
               cursorColor: Colors.white,
               cursorHeight: 25,
               decoration: kTextFormFieldDecoration.copyWith(),
@@ -114,14 +116,17 @@ class _InsertLocationScreenState extends State<InsertLocationScreen> {
   }
 
   Widget _flareWidget() {
-    return Container(
-        child: FlareActor(
-          "assets/animations/WorldSpin.flr",
-          fit: BoxFit.contain,
-          animation: "roll",
-        ),
-        height: 300,
-        width: 300);
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+          child: FlareActor(
+            "assets/animations/WorldSpin.flr",
+            fit: BoxFit.contain,
+            animation: "roll",
+          ),
+          height: 300,
+          width: 300),
+    );
   }
 
   Widget _getLocationButton() {
